@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  overflow: hidden;
+}
+
+/* glowing background */
+body::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #38bdf8, transparent 70%);
+  filter: blur(120px);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+.container {
+  width: 380px;
+  height: 460px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.auth-wrapper {
+  width: 200%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.auth-wrapper.toggled {
+  transform: translateX(-50%);
+}
+
+.form-box {
+  width: 50%;
+  padding: 40px;
+  color: #e5e7eb;
+  text-align: center;
+  opacity: 0.9;
+  transform: scale(0.96);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.auth-wrapper.toggled .login {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.auth-wrapper:not(.toggled) .register {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Floating inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 14px 0;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+
+input::placeholder {
+  color: #cbd5f5;
+}
+
+input:focus {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.03);
+}
+
+/* Button */
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(56,189,248,0.6);
+}
+
+p {
+  margin-top: 18px;
+  font-size: 14px;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}

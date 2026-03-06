@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Register Transition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="auth-wrapper">
+
+    <!-- Login -->
+    <div class="form-box login">
+      <h2>Login</h2>
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+      <p>
+        Don't have an account?
+        <a href="#" class="register-trigger">Register</a>
+      </p>
+    </div>
+
+    <!-- Register -->
+    <div class="form-box register">
+      <h2>Register</h2>
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button>Register</button>
+      <p>
+        Already have an account?
+        <a href="#" class="login-trigger">Login</a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
